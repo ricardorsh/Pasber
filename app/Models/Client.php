@@ -11,6 +11,8 @@ class Client extends Model
     protected $table = 'client';
     protected $fillable = [
         'name',
+        'telf',
+        'type_client',
 		'personal_identify',
 		'last_name',
         'direction',
