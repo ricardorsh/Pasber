@@ -5,7 +5,10 @@
     </button>
     <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Logout</a>
+        <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <button class="nav-link px-3 btn-link" type="submit">Logout</button>
+        </form>
     </div>
     </div>
 </header>

@@ -24,4 +24,12 @@ class AutenticateSessionController extends Controller
         return redirect()->intended();
 
     }
+
+    public function destroy(Request $Request){
+        Auth::guard('web')->logout();
+        $Request->session()->invalidate();
+        $Request->session()->regenerateToken();
+
+        return to_route('login')->with('status', 'Has cerrado sesion!');
+    }
 }

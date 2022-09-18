@@ -25,6 +25,7 @@ use App\Http\Controllers\AutenticateSessionController;
 
 Route::view('/login', 'auth.login')->name('login');
 Route::post('/login', [AutenticateSessionController::class, 'store']);
+Route::post('/logout', [AutenticateSessionController::class, 'destroy'])->name('logout');
 Route::get('/', [LoginControler::class, 'index'])->name('home');
 //Clients
 Route::get('/client', [ClientController::class, 'index'])->name('client.index');
